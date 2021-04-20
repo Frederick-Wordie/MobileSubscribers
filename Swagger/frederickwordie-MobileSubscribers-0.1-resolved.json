@@ -1,0 +1,274 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "MobileSubscribersApi",
+    "description": "API End points for mobile subscrition app",
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8087"
+    }
+  ],
+  "paths": {
+    "/api/getMobileNumbers": {
+      "get": {
+        "description": "End point to get all mobile Numbers",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "0": {
+                    "value": "[\"+834255988371\",\"+234255988371\",\"93425598831\",\"+593425598833\",\"+264255988371\",\"864255988271\"]"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:8087"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:8087"
+        }
+      ]
+    },
+    "/api/saveMobileSubscriber": {
+      "post": {
+        "description": "End point to save mobile subscriber",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/body"
+              },
+              "examples": {
+                "0": {
+                  "value": "{\n        \n        \"msisdn\": \"864255988271\",\n        \"customerIdOwner\": 1,\n        \"customerIdUser\": 1,\n        \"serviceType\": \"MOBILE_PREPAID\"\n    }"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_201"
+                },
+                "examples": {
+                  "0": {
+                    "value": "{\"id\":7,\"msisdn\":\"864255988271\",\"customerIdOwner\":1,\"customerIdUser\":1,\"serviceType\":\"MOBILE_PREPAID\",\"serviceStartDate\":\"2021-04-20T12:49:37.6835661Z\"}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:8087"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:8087"
+        }
+      ]
+    },
+    "/api/deleteSubscriber/+234255988371": {
+      "delete": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector"
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:8087"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:8087"
+        }
+      ]
+    },
+    "/api/getMobileSubscribers/MOBILE_PREPAID": {
+      "get": {
+        "description": "End point to get Mobile Subscriber by search",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "0": {
+                    "value": "[{\"id\":3,\"msisdn\":\"+834255988371\",\"customerIdOwner\":1,\"customerIdUser\":1,\"serviceType\":\"MOBILE_PREPAID\",\"serviceStartDate\":\"2021-04-20T12:35:33Z\"},{\"id\":2,\"msisdn\":\"+234255988371\",\"customerIdOwner\":1,\"customerIdUser\":1,\"serviceType\":\"MOBILE_PREPAID\",\"serviceStartDate\":\"2021-04-20T11:07:02Z\"},{\"id\":4,\"msisdn\":\"93425598831\",\"customerIdOwner\":1,\"customerIdUser\":1,\"serviceType\":\"MOBILE_PREPAID\",\"serviceStartDate\":\"2021-04-20T12:46:06Z\"},{\"id\":5,\"msisdn\":\"+593425598833\",\"customerIdOwner\":1,\"customerIdUser\":1,\"serviceType\":\"MOBILE_PREPAID\",\"serviceStartDate\":\"2021-04-20T12:46:25Z\"},{\"id\":6,\"msisdn\":\"+264255988371\",\"customerIdOwner\":1,\"customerIdUser\":1,\"serviceType\":\"MOBILE_PREPAID\",\"serviceStartDate\":\"2021-04-20T12:49:20Z\"},{\"id\":7,\"msisdn\":\"864255988271\",\"customerIdOwner\":1,\"customerIdUser\":1,\"serviceType\":\"MOBILE_PREPAID\",\"serviceStartDate\":\"2021-04-20T12:49:38Z\"}]"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:8087"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:8087"
+        }
+      ]
+    },
+    "/api/updateMobileSubscriber": {
+      "put": {
+        "description": "End point to update service type, customer or user of the mobile number",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/body_1"
+              },
+              "examples": {
+                "0": {
+                  "value": "{\n        \n        \"msisdn\": \"864255988271\",\n        \"customerIdOwner\": 2,\n        \"customerIdUser\": 1,\n        \"serviceType\": \"MOBILE_POSTPAID\"\n    }"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_201"
+                },
+                "examples": {
+                  "0": {
+                    "value": "{\"id\":7,\"msisdn\":\"864255988271\",\"customerIdOwner\":2,\"customerIdUser\":1,\"serviceType\":\"MOBILE_POSTPAID\",\"serviceStartDate\":\"2021-04-20T12:52:35.9597347Z\"}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:8087"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:8087"
+        }
+      ]
+    },
+    "/api/getMobileSubscribers": {
+      "get": {
+        "description": "End point to get All mobile Subscribers",
+        "responses": {
+          "default": {
+            "description": "Auto generated using Swagger Inspector"
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:8087"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:8087"
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "body": {
+        "type": "object",
+        "properties": {
+          "serviceType": {
+            "type": "string"
+          },
+          "customerIdOwner": {
+            "type": "integer"
+          },
+          "msisdn": {
+            "type": "string"
+          },
+          "customerIdUser": {
+            "type": "integer"
+          }
+        }
+      },
+      "inline_response_201": {
+        "type": "object",
+        "properties": {
+          "serviceType": {
+            "type": "string"
+          },
+          "serviceStartDate": {
+            "type": "string"
+          },
+          "customerIdOwner": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "msisdn": {
+            "type": "string"
+          },
+          "customerIdUser": {
+            "type": "integer"
+          }
+        }
+      },
+      "body_1": {
+        "type": "object",
+        "properties": {
+          "serviceType": {
+            "type": "string"
+          },
+          "customerIdOwner": {
+            "type": "integer"
+          },
+          "msisdn": {
+            "type": "string"
+          },
+          "customerIdUser": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}
