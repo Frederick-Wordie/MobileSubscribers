@@ -1,5 +1,8 @@
 server:
   port: 8087
+  tomcat:
+    threads:
+      max: 500
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/mobilesubscriberdb?useUnicode=true&characterEncoding=utf8&useSSL=false
