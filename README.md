@@ -124,7 +124,7 @@ _Request_:
 ```
 
 _Response_:  
-
+```json
 {
     "id": 27,
     "msisdn": "4787765678733",
@@ -133,7 +133,7 @@ _Response_:
     "serviceType": "MOBILE_POSTPAID",
     "serviceStartDate": "2021-04-20T17:59:48.456043Z"
 }
-
+```
 
 7. **Delete Mobile Subscriber** 
 
