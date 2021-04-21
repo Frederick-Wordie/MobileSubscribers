@@ -5,8 +5,8 @@ Swagger OAS 3 definition of the designed / implemented API is located in the `SW
 
 ## Setting Up
 
-1. ** Install mysql **
-2. ** Replace the connection string in the application.yaml file as well as the credentials to the installed mysql database credentials **
+1. **Install mysql**
+2. **Replace the connection string in the application.yaml file as well as the credentials to the installed mysql database credentials**
 ```properties
 spring:
   datasource:
@@ -15,7 +15,7 @@ spring:
     password: password
 ```
 
-3. ** Run project as spring boot project **
+3. **Run project as spring boot project**
 
 ## All Available Requests
 All requests and response are sent via `JSON`. 
@@ -23,7 +23,7 @@ All requests and response are sent via `JSON`.
 **Base Access URL**
 `http://localhost:8087/api`
 
-1. ** Create Mobile Subscribers **
+1. **Create Mobile Subscribers**
 
 `POST /saveMobileSubscriber`
 
@@ -37,8 +37,8 @@ _Request_:
 	"serviceType": "MOBILE_PREPAID"     		
  }
 ``` 
-Response
-
+_Response_:
+```json
 {
     "id": 27,
     "msisdn": "4787765678733",
@@ -47,13 +47,13 @@ Response
     "serviceType": "MOBILE_PREPAID",
     "serviceStartDate": "2021-04-20T17:49:45.3753744Z"
 }
+``` 
+2. **Get all mobile scribers**
 
-2. Get all mobile scribers
+`GET /getMobileSubscribers`
 
-GET /getMobileSubscribers
-
-Response 
-
+_Response_:
+```json
 [
     {
         "id": 1,
@@ -64,26 +64,26 @@ Response
         "serviceStartDate": "2021-03-26T14:14:31Z"
     }
 ]
+``` 
 
+3. **Get mobile numbers of mobile subscribers**
 
-3. Get mobile numbers of mobile subscribers
+`GET /getMobileNumbers` 
 
-GET /getMobileNumbers 
-
-Response 
-
+_Response_: 
+```json
 [
     "233244988371",
     "234255986372"
 ]
+``` 
 
+4. **Get Mobile Subscribers matching search criteria**
 
-4. Get Mobile Subscribers matching search criteria
+`GET /getMobileSubscribers/{search}`
 
-GET /getMobileSubscribers/{search}
-
-Response 
-
+_Response_:  
+```json
 [
     {
         "id": 27,
@@ -94,24 +94,25 @@ Response
         "serviceStartDate": "2021-04-20T17:49:45Z"
     }
 ]
+``` 
 
+5. **Get Mobile numbers matching search criteria** 
 
-5. Get Mobile numbers matching search criteria 
+`GET /getMobileNumbers/{search}` 
 
-GET /getMobileNumbers/{search} 
+_Response_: 
 
-Response 
-
+```json
 [
     "4787765678733"
 ]
+```
+6.  **Update mobile number plan, assign different owners or users**
 
-6.  Update mobile number plan, assign different owners or users
+`PUT /updateMobileSubscriber`
 
-PUT /updateMobileSubscriber
-
-Request 
-
+_Request_:  
+```json
    {
         
       "msisdn": "4787765678733",
@@ -120,9 +121,9 @@ Request
       "serviceType": "MOBILE_POSTPAID"
        
    }
+```
 
-
-Response 
+_Response_:  
 
 {
     "id": 27,
@@ -134,12 +135,14 @@ Response
 }
 
 
-7. Delete Mobile Subscriber 
+7. **Delete Mobile Subscriber** 
 
-DELETE /deleteSubscriber/{mobilenumber}
+`DELETE /deleteSubscriber/{mobilenumber}`
 
-Response 
+_Response_: 
 
+```
 HTTP/1.1 200 OK
 Date: Thu, 24 Feb 2011 12:36:31 GMT
 Status: 200 OK
+```
