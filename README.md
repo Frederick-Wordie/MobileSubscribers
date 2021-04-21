@@ -1,36 +1,42 @@
 # MobileSubscribers
 REST Web-Service responsible of maintaining a database of mobile numbers, that are assigned to clients, along with some related information.
 
-Swagger OAS 3 definition of the designed / implemented API is located in the Swagger folder in the root of the application
+Swagger OAS 3 definition of the designed / implemented API is located in the `SWAGGER Folder` in the root of the application
 
-Setting Up
+## Setting Up
 
-1. Install mysql 
-2. Replace the connection string in the application.yaml file as well as the credentials to the installed mysql database credentials
+1. ** Install mysql **
+2. ** Replace the connection string in the application.yaml file as well as the credentials to the installed mysql database credentials **
+```properties
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/databasename?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: username
     password: password
+```
 
-3. Run project as spring boot project
+3. ** Run project as spring boot project **
 
-All Available Requests
+## All Available Requests
+All requests and response are sent via `JSON`. 
 
-Base Url: http://localhost:8087/api
+**Base Access URL**
+`http://localhost:8087/api`
 
-1. Create Mobile Subscribers
+1. ** Create Mobile Subscribers **
 
-POST /saveMobileSubscriber
+`POST /saveMobileSubscriber`
 
-Request 
+_Request_: 
+
+```json
 {
 	"msisdn": "4343kolo",
 	"customerIdOwner": 1,
 	"customerIdUser": 1,
 	"serviceType": "MOBILE_PREPAID"     		
  }
-
+``` 
 Response
 
 {
